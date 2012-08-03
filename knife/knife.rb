@@ -48,13 +48,7 @@ bootstrap_chef_version  "~> 0.10.4"
 def load_if_exists(file) ; load(file) if File.exists?(file) ; end
 
 # Organization-sepecific settings -- Chef::Config[:ec2_image_info] and so forth
-#
-# This must do at least these things:
-#
-# * define Chef::Config.chef_server
-# * define Chef::Config.organization
-#
-#
+
 load_if_exists "#{credentials_path}/knife-org.rb"
 
 # User-specific knife info or credentials
